@@ -328,6 +328,24 @@ func init_fichas():
 	fichas.append(Fichas.new("3","P","D","F"))
 	fichas.append(Fichas.new("3","P","D","L"))
 	
+	fichas.append(Fichas.new("3","P","R","B"))
+	fichas.append(Fichas.new("3","P","R","F"))
+	fichas.append(Fichas.new("3","P","R","L"))
+	fichas.append(Fichas.new("3","P","S","B"))
+	fichas.append(Fichas.new("3","P","S","F"))
+	fichas.append(Fichas.new("3","P","S","L"))
+	
+	fichas.append(Fichas.new("3","R","D","B"))
+	fichas.append(Fichas.new("3","R","D","F"))
+	fichas.append(Fichas.new("3","R","D","L"))
+	fichas.append(Fichas.new("3","R","R","B"))
+	fichas.append(Fichas.new("3","R","R","F"))
+	fichas.append(Fichas.new("3","R","R","L"))
+	
+	fichas.append(Fichas.new("3","R","S","B"))
+	fichas.append(Fichas.new("3","R","S","F"))
+	fichas.append(Fichas.new("3","R","S","L"))
+	
 	fichas.shuffle()
 
 

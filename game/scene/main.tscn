@@ -1,14 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://img/img-128x128/1-G-D-B.png" type="Texture" id=2]
-[ext_resource path="res://scene/topleft.gd" type="Script" id=3]
-[ext_resource path="res://scene/topmiddle.gd" type="Script" id=4]
+[ext_resource path="res://script/topleft.gd" type="Script" id=3]
+[ext_resource path="res://script/topmiddle.gd" type="Script" id=4]
 [ext_resource path="res://img/img-128x128/3-P-S-L.png" type="Texture" id=5]
 [ext_resource path="res://img/img-128x128/2-G-S-B.png" type="Texture" id=6]
-[ext_resource path="res://scene/topright.gd" type="Script" id=7]
-[ext_resource path="res://scene/topmiddle2.gd" type="Script" id=8]
-[ext_resource path="res://scene/topmiddle1.gd" type="Script" id=9]
+[ext_resource path="res://script/topright.gd" type="Script" id=7]
+[ext_resource path="res://script/topmiddle2.gd" type="Script" id=8]
+[ext_resource path="res://script/topmiddle1.gd" type="Script" id=9]
+[ext_resource path="res://script/centerleft.gd" type="Script" id=10]
+[ext_resource path="res://script/centermiddle1.gd" type="Script" id=11]
+[ext_resource path="res://script/centerright.gd" type="Script" id=12]
+[ext_resource path="res://script/centermiddle2.gd" type="Script" id=13]
+[ext_resource path="res://script/bottomleft.gd" type="Script" id=14]
+[ext_resource path="res://script/bottommiddle1.gd" type="Script" id=15]
+[ext_resource path="res://script/bottommiddle2.gd" type="Script" id=16]
+[ext_resource path="res://script/bottomright.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
@@ -71,6 +79,7 @@ texture = ExtResource( 2 )
 
 [node name="centerleft" type="Area2D" parent="."]
 position = Vector2( 87.4525, 228.062 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -83,6 +92,7 @@ texture = ExtResource( 5 )
 
 [node name="centermiddle1" type="Area2D" parent="."]
 position = Vector2( 256.356, 228.062 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -95,6 +105,7 @@ texture = ExtResource( 5 )
 
 [node name="centermiddle2" type="Area2D" parent="."]
 position = Vector2( 414.971, 226.348 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -107,6 +118,7 @@ texture = ExtResource( 5 )
 
 [node name="centerright" type="Area2D" parent="."]
 position = Vector2( 578.73, 228.92 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -119,6 +131,7 @@ texture = ExtResource( 5 )
 
 [node name="bottomleft" type="Area2D" parent="."]
 position = Vector2( 86.595, 375.531 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -131,6 +144,7 @@ texture = ExtResource( 5 )
 
 [node name="bottommiddle1" type="Area2D" parent="."]
 position = Vector2( 257.213, 373.817 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -144,6 +158,7 @@ texture = ExtResource( 5 )
 
 [node name="bottommiddle2" type="Area2D" parent="."]
 position = Vector2( 416.685, 372.102 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -156,6 +171,7 @@ texture = ExtResource( 5 )
 
 [node name="bottomright" type="Area2D" parent="."]
 position = Vector2( 578.73, 372.102 )
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -271,6 +287,15 @@ margin_top = 608.315
 margin_right = 463.455
 margin_bottom = 633.315
 text = "SOLVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="solver_label" type="RichTextLabel" parent="helper"]
+margin_left = 78.0
+margin_top = 468.0
+margin_right = 355.0
+margin_bottom = 493.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -33,16 +33,28 @@ func add_selections(n):
 		var resul = solver_params(tablero[selections[0]],tablero[selections[1]],tablero[selections[2]])
 		if resul:
 			print("hay algo")
+			get_node("helper/solver_label").set_text("YES!!!!!!")
 		else:
 			print("nada")
+			get_node("helper/solver_label").set_text("NOU :-(")
 		num_selected = 0
-		clear_buttons()
+		
 		selections.clear()
+		clear_buttons()
 
 func clear_buttons():
 	get_node("topleft").clear_button()
 	get_node("topmiddle1").clear_button()
 	get_node("topmiddle2").clear_button()
+	get_node("topright").clear_button()
+	get_node("centerleft").clear_button()
+	get_node("centermiddle1").clear_button()
+	get_node("centermiddle2").clear_button()
+	get_node("centerright").clear_button()
+	get_node("bottomleft").clear_button()
+	get_node("bottommiddle1").clear_button()
+	get_node("bottommiddle2").clear_button()
+	get_node("bottomright").clear_button()
 
 func solver():
 	

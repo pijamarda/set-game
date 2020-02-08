@@ -31,7 +31,7 @@ texture = ExtResource( 6 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topmiddle"]
-position = Vector2( 484.293, 112.911 )
+position = Vector2( 410.833, 118.352 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -44,7 +44,7 @@ texture = ExtResource( 5 )
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topright"]
-position = Vector2( 803.981, 115.632 )
+position = Vector2( 667.944, 122.434 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -52,3 +52,74 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="topright/CollisionShape2D"]
 texture = ExtResource( 2 )
+
+[node name="new-format" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="new-format"]
+position = Vector2( 408.456, 309.147 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="Sprite" parent="new-format/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 341.092
+margin_top = 528.176
+margin_right = 550.092
+margin_bottom = 583.176
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="helper" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="helper"]
+margin_left = 624.112
+margin_top = 467.44
+margin_right = 726.112
+margin_bottom = 481.44
+text = "TABLERO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tablero_label" type="Label" parent="helper"]
+margin_left = 619.452
+margin_top = 492.285
+margin_right = 850.452
+margin_bottom = 591.285
+text = "STATUS to be updated
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="helper"]
+margin_left = 9.2262
+margin_top = 502.712
+margin_right = 240.226
+margin_bottom = 590.712
+text = "SET helper:
+Numbers: 1, 2, 3
+Color: Red, Green Purple
+Shape: Diamond, Serpent, Rectangle
+Fill: Full, Blank, Lines"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cardlist_label" type="Label" parent="helper"]
+margin_left = 840.616
+margin_top = 24.4765
+margin_right = 1007.62
+margin_bottom = 507.476
+text = "cardlist"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

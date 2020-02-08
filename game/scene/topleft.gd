@@ -1,11 +1,10 @@
 extends Area2D
 
-onready var sprite = get_node("/root/Node2D/topleft/CollisionShape2D/sprite")
-onready var ficha = get_node("/root/Node2D").fichas.pop_back()
+
+var selected = false
 
 func _ready():	
-	var new_img = load(ficha.print_file_name())
-	sprite.set_texture(new_img)	
+	pass	
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \
@@ -14,9 +13,12 @@ func _input_event(viewport, event, shape_idx):
 		self.on_click()
 
 func on_click():
-	if get_node("/root/Node2D").fichas.size() > 0: 
-		var ficha = get_node("/root/Node2D").fichas.pop_front()
-		print(ficha.print_file_name())
-		var new_img = load(ficha.print_file_name())
-		sprite. set_texture(new_img)
-		get_node("/root/Node2D").update_label_text()
+	var num_sel = get_node("/root/Node2D").get_num_selected()
+	var mainNode = get_node("/root/Node2D")
+	if (!selected):
+		if num_sel < 3:
+			selected = true
+			mainNode.add_selections(0)
+
+func clear_button():
+	selected = false

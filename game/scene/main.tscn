@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://img/img-128x128/1-G-D-B.png" type="Texture" id=2]
 [ext_resource path="res://script/topleft.gd" type="Script" id=3]
-[ext_resource path="res://script/topmiddle.gd" type="Script" id=4]
 [ext_resource path="res://img/img-128x128/3-P-S-L.png" type="Texture" id=5]
 [ext_resource path="res://img/img-128x128/2-G-S-B.png" type="Texture" id=6]
 [ext_resource path="res://script/topright.gd" type="Script" id=7]
@@ -183,10 +182,10 @@ shape = SubResource( 1 )
 texture = ExtResource( 5 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 321.373
-margin_top = 532.463
-margin_right = 530.373
-margin_bottom = 587.463
+margin_left = 264.786
+margin_top = 467.302
+margin_right = 473.786
+margin_bottom = 522.302
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -194,10 +193,9 @@ __meta__ = {
 
 [node name="solved1" type="Area2D" parent="."]
 position = Vector2( -0.000244141, 426.117 )
-script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="solved1"]
-position = Vector2( 120.182, 289.828 )
+position = Vector2( 106.464, 249.531 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -208,10 +206,9 @@ texture = ExtResource( 5 )
 
 [node name="solved2" type="Area2D" parent="."]
 position = Vector2( 183.479, 425.259 )
-script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="solved2"]
-position = Vector2( 120.182, 289.828 )
+position = Vector2( 109.036, 247.817 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -222,10 +219,9 @@ texture = ExtResource( 5 )
 
 [node name="solved3" type="Area2D" parent="."]
 position = Vector2( 356.669, 423.545 )
-script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="solved3"]
-position = Vector2( 120.182, 289.828 )
+position = Vector2( 111.608, 244.387 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -237,20 +233,20 @@ texture = ExtResource( 5 )
 [node name="helper" type="Node" parent="."]
 
 [node name="Label2" type="Label" parent="helper"]
-margin_left = 583.815
-margin_top = 520.597
-margin_right = 685.815
-margin_bottom = 534.597
+margin_left = 516.082
+margin_top = 468.297
+margin_right = 618.082
+margin_bottom = 482.297
 text = "TABLERO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="tablero_label" type="Label" parent="helper"]
-margin_left = 580.013
-margin_top = 561.733
-margin_right = 811.013
-margin_bottom = 660.733
+margin_left = 515.71
+margin_top = 505.146
+margin_right = 746.71
+margin_bottom = 604.146
 text = "STATUS to be updated
 "
 __meta__ = {
@@ -258,10 +254,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="helper"]
-margin_left = 16.9426
-margin_top = 548.153
-margin_right = 247.943
-margin_bottom = 636.153
+margin_left = 10.941
+margin_top = 498.425
+margin_right = 241.941
+margin_bottom = 586.425
 text = "SET helper:
 Numbers: 1, 2, 3
 Color: Red, Green Purple
@@ -281,23 +277,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="button_solver" type="Button" parent="helper"]
-margin_left = 376.455
-margin_top = 608.315
-margin_right = 463.455
-margin_bottom = 633.315
-text = "SOLVE"
+[node name="solver_label" type="RichTextLabel" parent="helper"]
+margin_left = 31.1426
+margin_top = 457.428
+margin_right = 251.143
+margin_bottom = 482.428
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="solver_label" type="RichTextLabel" parent="helper"]
-margin_left = 78.0
-margin_top = 468.0
-margin_right = 355.0
-margin_bottom = 493.0
+[node name="last_solved_label" type="Label" parent="helper"]
+margin_left = 243.346
+margin_top = 574.412
+margin_right = 349.346
+margin_bottom = 588.412
+text = "LAST SOLVED"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="helper/button_solver" to="." method="_on_button_solver_pressed"]

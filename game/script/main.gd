@@ -34,6 +34,24 @@ func add_selections(n):
 		if resul:
 			print("hay algo")
 			get_node("helper/solver_label").set_text("YES!!!!!!")
+			var solved_sprite = get_node("solved1/CollisionShape2D/sprite")
+			var temp_texture = load(tablero[selections[0]].print_file_name())
+			solved_sprite.set_texture(temp_texture)
+			
+			solved_sprite = get_node("solved2/CollisionShape2D/sprite")
+			temp_texture = load(tablero[selections[1]].print_file_name())
+			solved_sprite.set_texture(temp_texture)
+			
+			solved_sprite = get_node("solved3/CollisionShape2D/sprite")
+			temp_texture = load(tablero[selections[2]].print_file_name())
+			solved_sprite.set_texture(temp_texture)
+			
+			tablero[selections[0]] = fichas.pop_front()
+			tablero[selections[1]] = fichas.pop_front()
+			tablero[selections[2]] = fichas.pop_front()
+			update_tablero_text()
+			update_label_text()
+			
 		else:
 			print("nada")
 			get_node("helper/solver_label").set_text("NOU :-(")
@@ -349,13 +367,7 @@ func init_fichas():
 	fichas.shuffle()
 
 
-func _on_button_solver_pressed():
 
-	var resultado = solver()
-	if resultado:
-		print("hay algo")
-	else:
-		print("nada")
 	
 	
 	

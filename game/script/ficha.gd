@@ -12,7 +12,7 @@ func _init(n,c,s,f):
 	fill = f
 	
 func print_file_name():
-	var final_string = "res://img/img-128x128/" + number+ "-"+color+"-"+shape+"-"+fill + ".png"
+	var final_string = "res://img/img-128x90/" + number+ "-"+color+"-"+shape+"-"+fill + ".png"
 	return final_string
 	
 func print_name_simple():

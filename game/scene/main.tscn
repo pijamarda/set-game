@@ -1,10 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
-[ext_resource path="res://img/img-128x128/1-G-D-B.png" type="Texture" id=2]
 [ext_resource path="res://script/topleft.gd" type="Script" id=3]
-[ext_resource path="res://img/img-128x128/3-P-S-L.png" type="Texture" id=5]
-[ext_resource path="res://img/img-128x128/2-G-S-B.png" type="Texture" id=6]
 [ext_resource path="res://script/topright.gd" type="Script" id=7]
 [ext_resource path="res://script/topmiddle2.gd" type="Script" id=8]
 [ext_resource path="res://script/topmiddle1.gd" type="Script" id=9]
@@ -18,14 +15,14 @@
 [ext_resource path="res://script/bottomright.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 64 )
+extents = Vector2( 64, 45 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -1.80493, 2.70746 )
 script = ExtResource( 1 )
 
 [node name="topleft" type="Area2D" parent="."]
-position = Vector2( 90.8821, 80.5935 )
+position = Vector2( 90, 80 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -35,10 +32,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="topleft/CollisionShape2D"]
-texture = ExtResource( 6 )
 
 [node name="topmiddle1" type="Area2D" parent="."]
-position = Vector2( 258.071, 80.5935 )
+position = Vector2( 258, 80 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -48,7 +44,6 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="topmiddle1/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="topmiddle2" type="Area2D" parent="."]
 position = Vector2( 418.4, 80.5935 )
@@ -61,7 +56,6 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="topmiddle2/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="topright" type="Area2D" parent="."]
 position = Vector2( 578.73, 81.4509 )
@@ -74,10 +68,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="topright/CollisionShape2D"]
-texture = ExtResource( 2 )
 
 [node name="centerleft" type="Area2D" parent="."]
-position = Vector2( 87.4525, 228.062 )
+position = Vector2( 90.8821, 226.348 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -87,10 +80,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="centerleft/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="centermiddle1" type="Area2D" parent="."]
-position = Vector2( 256.356, 228.062 )
+position = Vector2( 257.213, 226.348 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -100,10 +92,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="centermiddle1/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="centermiddle2" type="Area2D" parent="."]
-position = Vector2( 414.971, 226.348 )
+position = Vector2( 418.4, 226.348 )
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
@@ -113,10 +104,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="centermiddle2/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="centerright" type="Area2D" parent="."]
-position = Vector2( 578.73, 228.92 )
+position = Vector2( 578.73, 226.348 )
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
@@ -126,10 +116,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="centerright/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="bottomleft" type="Area2D" parent="."]
-position = Vector2( 86.595, 375.531 )
+position = Vector2( 90.8821, 372.102 )
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
@@ -139,10 +128,9 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="bottomleft/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="bottommiddle1" type="Area2D" parent="."]
-position = Vector2( 257.213, 373.817 )
+position = Vector2( 256.356, 372.102 )
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
@@ -153,10 +141,9 @@ position = Vector2( 0.857422, 0 )
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="bottommiddle1/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="bottommiddle2" type="Area2D" parent="."]
-position = Vector2( 416.685, 372.102 )
+position = Vector2( 418.4, 372.102 )
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
@@ -166,7 +153,6 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="bottommiddle2/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="bottomright" type="Area2D" parent="."]
 position = Vector2( 578.73, 372.102 )
@@ -179,56 +165,49 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="bottomright/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 264.786
-margin_top = 467.302
-margin_right = 473.786
-margin_bottom = 522.302
+margin_left = 258.0
+margin_top = 465.59
+margin_right = 467.0
+margin_bottom = 520.59
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="solved1" type="Area2D" parent="."]
-position = Vector2( -0.000244141, 426.117 )
+position = Vector2( 90.8821, 673.076 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="solved1"]
-position = Vector2( 106.464, 249.531 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="sprite" type="Sprite" parent="solved1/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="solved2" type="Area2D" parent="."]
-position = Vector2( 183.479, 425.259 )
+position = Vector2( 280.464, 673.076 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="solved2"]
-position = Vector2( 109.036, 247.817 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="sprite" type="Sprite" parent="solved2/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="solved3" type="Area2D" parent="."]
-position = Vector2( 356.669, 423.545 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="solved3"]
-position = Vector2( 111.608, 244.387 )
-shape = SubResource( 1 )
+position = Vector2( 467, 673.076 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="solved3"]
+shape = SubResource( 1 )
+
 [node name="sprite" type="Sprite" parent="solved3/CollisionShape2D"]
-texture = ExtResource( 5 )
 
 [node name="helper" type="Node" parent="."]
 

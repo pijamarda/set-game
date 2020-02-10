@@ -8,11 +8,13 @@ var num_selected = 0
 var selections = []
 
 func _init():
+	randomize()
 	init_fichas()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+# warning-ignore:unused_variable
 	for i in range(0,12):
 		tablero.append(fichas.pop_front())
 		
@@ -249,6 +251,7 @@ func restart():
 	init_fichas()
 	update_label_text()
 	tablero.clear()
+# warning-ignore:unused_variable
 	for i in range(0,12):
 		tablero.append(fichas.pop_front())
 	update_tablero_text()

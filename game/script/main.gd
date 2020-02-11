@@ -8,12 +8,15 @@ var num_selected = 0
 var selections = []
 
 func _init():
-	randomize()
+	#randomize()
 	init_fichas()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	get_node("helper/cardlist_label").hide()
+	get_node("helper/Label2").hide()
+	get_node("helper/tablero_label").hide()
 # warning-ignore:unused_variable
 	for i in range(0,12):
 		tablero.append(fichas.pop_front())

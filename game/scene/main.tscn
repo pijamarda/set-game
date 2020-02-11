@@ -22,7 +22,7 @@ position = Vector2( -1.80493, 2.70746 )
 script = ExtResource( 1 )
 
 [node name="topleft" type="Area2D" parent="."]
-position = Vector2( 90, 80 )
+position = Vector2( 105.79, 112.451 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -34,7 +34,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="topleft/CollisionShape2D"]
 
 [node name="topmiddle1" type="Area2D" parent="."]
-position = Vector2( 258, 80 )
+position = Vector2( 269.579, 112.451 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -46,7 +46,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="topmiddle1/CollisionShape2D"]
 
 [node name="topmiddle2" type="Area2D" parent="."]
-position = Vector2( 418.4, 80.5935 )
+position = Vector2( 429.526, 112.451 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -58,7 +58,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="topmiddle2/CollisionShape2D"]
 
 [node name="topright" type="Area2D" parent="."]
-position = Vector2( 578.73, 81.4509 )
+position = Vector2( 105.79, 227.874 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
@@ -70,7 +70,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="topright/CollisionShape2D"]
 
 [node name="centerleft" type="Area2D" parent="."]
-position = Vector2( 90.8821, 226.348 )
+position = Vector2( 269.579, 227.874 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -82,7 +82,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="centerleft/CollisionShape2D"]
 
 [node name="centermiddle1" type="Area2D" parent="."]
-position = Vector2( 257.213, 226.348 )
+position = Vector2( 429.526, 227.874 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -94,7 +94,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="centermiddle1/CollisionShape2D"]
 
 [node name="centermiddle2" type="Area2D" parent="."]
-position = Vector2( 418.4, 226.348 )
+position = Vector2( 105.79, 343.664 )
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
@@ -106,7 +106,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="centermiddle2/CollisionShape2D"]
 
 [node name="centerright" type="Area2D" parent="."]
-position = Vector2( 578.73, 226.348 )
+position = Vector2( 270.436, 343.664 )
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
@@ -118,7 +118,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="centerright/CollisionShape2D"]
 
 [node name="bottomleft" type="Area2D" parent="."]
-position = Vector2( 90.8821, 372.102 )
+position = Vector2( 429.526, 343.664 )
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
@@ -130,7 +130,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="bottomleft/CollisionShape2D"]
 
 [node name="bottommiddle1" type="Area2D" parent="."]
-position = Vector2( 256.356, 372.102 )
+position = Vector2( 105.79, 458.405 )
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
@@ -143,7 +143,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="bottommiddle1/CollisionShape2D"]
 
 [node name="bottommiddle2" type="Area2D" parent="."]
-position = Vector2( 418.4, 372.102 )
+position = Vector2( 269.579, 458.405 )
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
@@ -155,7 +155,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="bottommiddle2/CollisionShape2D"]
 
 [node name="bottomright" type="Area2D" parent="."]
-position = Vector2( 578.73, 372.102 )
+position = Vector2( 429.526, 458.405 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
@@ -167,17 +167,17 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="bottomright/CollisionShape2D"]
 
 [node name="Button" type="Button" parent="."]
-margin_left = 258.0
-margin_top = 465.59
-margin_right = 467.0
-margin_bottom = 520.59
+margin_left = 167.789
+margin_top = 570.59
+margin_right = 376.789
+margin_bottom = 625.59
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="solved1" type="Area2D" parent="."]
-position = Vector2( 90.8821, 673.076 )
+position = Vector2( 105.79, 720.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -188,7 +188,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="solved1/CollisionShape2D"]
 
 [node name="solved2" type="Area2D" parent="."]
-position = Vector2( 280.464, 673.076 )
+position = Vector2( 269.579, 720.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -199,7 +199,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="solved2/CollisionShape2D"]
 
 [node name="solved3" type="Area2D" parent="."]
-position = Vector2( 467, 673.076 )
+position = Vector2( 429.526, 720.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -212,36 +212,22 @@ shape = SubResource( 1 )
 [node name="helper" type="Node" parent="."]
 
 [node name="Label2" type="Label" parent="helper"]
-margin_left = 516.082
-margin_top = 468.297
-margin_right = 618.082
-margin_bottom = 482.297
+margin_left = 799.082
+margin_top = 482.428
+margin_right = 901.082
+margin_bottom = 496.428
 text = "TABLERO"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="tablero_label" type="Label" parent="helper"]
-margin_left = 515.71
-margin_top = 505.146
-margin_right = 746.71
-margin_bottom = 604.146
+margin_left = 785.71
+margin_top = 523.297
+margin_right = 1016.71
+margin_bottom = 622.297
 text = "STATUS to be updated
 "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="helper"]
-margin_left = 10.941
-margin_top = 498.425
-margin_right = 241.941
-margin_bottom = 586.425
-text = "SET helper:
-Numbers: 1, 2, 3
-Color: Red, Green Purple
-Shape: Diamond, Serpent, Rectangle
-Fill: Full, Blank, Lines"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -257,19 +243,19 @@ __meta__ = {
 }
 
 [node name="solver_label" type="RichTextLabel" parent="helper"]
-margin_left = 31.1426
-margin_top = 457.428
-margin_right = 251.143
-margin_bottom = 482.428
+margin_left = 153.248
+margin_top = 532.428
+margin_right = 373.248
+margin_bottom = 557.428
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="last_solved_label" type="Label" parent="helper"]
-margin_left = 243.346
-margin_top = 574.412
-margin_right = 349.346
-margin_bottom = 588.412
+margin_left = 214.609
+margin_top = 656.508
+margin_right = 320.609
+margin_bottom = 670.508
 text = "LAST SOLVED"
 __meta__ = {
 "_edit_use_anchors_": false

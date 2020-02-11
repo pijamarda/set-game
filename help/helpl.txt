@@ -1,0 +1,6 @@
+c:\Users\user\AppData\Local\Android\Sdk\build-tools\29.0.3\zipalign.exe -p 4 E:\data\proyectos\godot3\set-game\export\android\set_unsigned.apk E:\data\proyectos\godot3\set-game\export\android\set_unsigned_aligned.apk
+
+c:\Users\user\AppData\Local\Android\Sdk\build-tools\29.0.3\apksigner.bat sign --ks E:\data\proyectos\godot3\set-game\export\android\keyPrivAndroid.asc E:\data\proyectos\godot3\set-game\export\android\set_unsigned_aligned.apk
+Keystore password for signer #1:
+
+http://docs.godotengine.org/en/latest/getting_started/workflow/export/exporting_for_android.html

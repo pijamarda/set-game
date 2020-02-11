@@ -20,6 +20,7 @@ func on_click():
 			selected = true
 			get_node("CollisionShape2D/sprite").modulate = Color(1, 1, 1, 0.5)
 			mainNode.add_selections(8)
+			get_node("/root/Node2D").clickok()
 
 func clear_button():
 	selected = false

@@ -6,7 +6,7 @@ var selected = false
 func _ready():	
 	pass	
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, shape_idx):
 	if event is InputEventMouseButton \
 	and event.button_index == BUTTON_LEFT \
 	and event.is_pressed():
@@ -20,6 +20,7 @@ func on_click():
 			selected = true
 			get_node("CollisionShape2D/sprite").modulate = Color(1, 1, 1, 0.5)
 			mainNode.add_selections(5)
+			get_node("/root/Node2D").clickok()
 
 func clear_button():
 	selected = false

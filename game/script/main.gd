@@ -6,6 +6,9 @@ var fichas = []
 var tablero = []
 var num_selected = 0
 var selections = []
+var sound_click
+var sound_correct
+var sound_wrong
 
 func _init():
 	#randomize()
@@ -23,7 +26,12 @@ func _ready():
 		
 	update_tablero_text()
 	update_label_text()
+	sound_click = get_node("sound/click")
+	sound_correct = get_node("sound/correct")
+	sound_wrong = get_node("sound/wrong")
 	
+func clickok():
+	sound_click.play()
 
 func get_num_selected():
 	return num_selected
@@ -56,10 +64,14 @@ func add_selections(n):
 			tablero[selections[2]] = fichas.pop_front()
 			update_tablero_text()
 			update_label_text()
+			sound_click.stop()
+			sound_correct.play()
+			
 			
 		else:
 			print("nada")
 			get_node("helper/solver_label").set_text("NOU :-(")
+			sound_wrong.play()
 		num_selected = 0
 		
 		selections.clear()

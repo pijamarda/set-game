@@ -19,7 +19,7 @@
 [ext_resource path="res://script/bottomright.gd" type="Script" id=17]
 [ext_resource path="res://font/MontserratAlternates-Bold.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=19]
-[ext_resource path="res://font/Montserrat-Regular.otf" type="DynamicFontData" id=20]
+[ext_resource path="res://font/Montserrat-SemiBold.otf" type="DynamicFontData" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 45 )
@@ -200,7 +200,7 @@ __meta__ = {
 }
 
 [node name="solved1" type="Area2D" parent="."]
-position = Vector2( 105.79, 720.708 )
+position = Vector2( 105.79, 731.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -211,7 +211,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="solved1/CollisionShape2D"]
 
 [node name="solved2" type="Area2D" parent="."]
-position = Vector2( 269.579, 720.708 )
+position = Vector2( 269.579, 731.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -222,7 +222,7 @@ shape = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="solved2/CollisionShape2D"]
 
 [node name="solved3" type="Area2D" parent="."]
-position = Vector2( 429.526, 720.708 )
+position = Vector2( 429.526, 731.708 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -277,12 +277,13 @@ __meta__ = {
 }
 
 [node name="last_solved_label" type="Label" parent="helper"]
-margin_left = 200.609
-margin_top = 646.508
-margin_right = 339.609
-margin_bottom = 672.508
+margin_left = 201.0
+margin_top = 645.0
+margin_right = 347.0
+margin_bottom = 680.0
 custom_fonts/font = SubResource( 5 )
 text = "LAST SOLVED"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

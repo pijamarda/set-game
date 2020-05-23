@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://snd/click.wav" type="AudioStream" id=2]
 [ext_resource path="res://script/topleft.gd" type="Script" id=3]
 [ext_resource path="res://snd/correct.wav" type="AudioStream" id=4]
 [ext_resource path="res://snd/wrong.wav" type="AudioStream" id=5]
+[ext_resource path="res://font/Montserrat-Bold.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://script/topright.gd" type="Script" id=7]
 [ext_resource path="res://script/topmiddle2.gd" type="Script" id=8]
 [ext_resource path="res://script/topmiddle1.gd" type="Script" id=9]
@@ -16,9 +17,27 @@
 [ext_resource path="res://script/bottommiddle1.gd" type="Script" id=15]
 [ext_resource path="res://script/bottommiddle2.gd" type="Script" id=16]
 [ext_resource path="res://script/bottomright.gd" type="Script" id=17]
+[ext_resource path="res://font/MontserratAlternates-Bold.otf" type="DynamicFontData" id=18]
+[ext_resource path="res://font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=19]
+[ext_resource path="res://font/Montserrat-Regular.otf" type="DynamicFontData" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 45 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 20 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( -1.80493, 2.70746 )
@@ -174,6 +193,7 @@ margin_left = 167.789
 margin_top = 570.59
 margin_right = 376.789
 margin_bottom = 625.59
+custom_fonts/font = SubResource( 2 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -250,15 +270,18 @@ margin_left = 153.248
 margin_top = 532.428
 margin_right = 373.248
 margin_bottom = 557.428
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="last_solved_label" type="Label" parent="helper"]
-margin_left = 214.609
-margin_top = 656.508
-margin_right = 320.609
-margin_bottom = 670.508
+margin_left = 200.609
+margin_top = 646.508
+margin_right = 339.609
+margin_bottom = 672.508
+custom_fonts/font = SubResource( 5 )
 text = "LAST SOLVED"
 __meta__ = {
 "_edit_use_anchors_": false

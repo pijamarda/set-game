@@ -11,7 +11,7 @@ var sound_correct
 var sound_wrong
 
 func _init():
-	#randomize()
+	randomize()
 	init_fichas()
 	
 # Called when the node enters the scene tree for the first time.

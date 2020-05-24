@@ -199,6 +199,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="button_finder" type="Button" parent="."]
+margin_left = 198.721
+margin_top = 793.142
+margin_right = 342.721
+margin_bottom = 841.142
+custom_fonts/font = SubResource( 2 )
+text = "SOLVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="solved1" type="Area2D" parent="."]
 position = Vector2( 105.79, 731.708 )
 __meta__ = {
@@ -302,3 +313,4 @@ stream = ExtResource( 5 )
 [node name="hover" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource( 2 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="button_finder" to="." method="_on_button_finder_pressed"]

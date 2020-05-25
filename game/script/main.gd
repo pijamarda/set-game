@@ -30,6 +30,14 @@ func _ready():
 	sound_correct = get_node("sound/correct")
 	sound_wrong = get_node("sound/wrong")
 	
+	
+	for i in get_node("solver_button_container").get_children():
+		i.queue_free()
+	var button1 = Button.new()
+	get_node("solver_button_container").add_child(button1)
+	button1.show()
+	
+	
 func clickok():
 	sound_click.play()
 

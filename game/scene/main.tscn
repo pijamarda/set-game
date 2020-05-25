@@ -288,10 +288,10 @@ __meta__ = {
 }
 
 [node name="solutions_label" type="RichTextLabel" parent="helper"]
-margin_left = 163.0
-margin_top = 813.0
-margin_right = 383.0
-margin_bottom = 896.0
+margin_left = 299.946
+margin_top = 811.149
+margin_right = 519.946
+margin_bottom = 894.149
 custom_fonts/mono_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 __meta__ = {
@@ -323,5 +323,29 @@ stream = ExtResource( 5 )
 
 [node name="hover" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource( 2 )
+
+[node name="solver_button_container" type="VBoxContainer" parent="."]
+margin_left = 15.0
+margin_top = 820.475
+margin_right = 220.0
+margin_bottom = 927.475
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="solver_button_container"]
+margin_right = 205.0
+margin_bottom = 20.0
+
+[node name="Button2" type="Button" parent="solver_button_container"]
+margin_top = 30.0
+margin_right = 205.0
+margin_bottom = 50.0
+
+[node name="Button3" type="Button" parent="solver_button_container"]
+margin_top = 60.0
+margin_right = 205.0
+margin_bottom = 80.0
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="button_finder" to="." method="_on_button_finder_pressed"]

@@ -405,8 +405,11 @@ func solution_finder():
 			winners.append([l[0],l[1],l[2]])			
 			winners_label_text = winners_label_text + str(int(l[0])+1) + " " + str(int(l[1])+1) + " " + str(int(l[2])+1) + "\n"
 			var button1 = Button.new()
-			button1.text = str(int(l[0])+1) + " " + str(int(l[1])+1) + " " + str(int(l[2])+1)			
+			#button1.text = str(int(l[0])+1) + " " + str(int(l[1])+1) + " " + str(int(l[2])+1)			
 			button1.connect("pressed", self, "_on_button_solver_pressed")
+			button1.connect("mouse_entered", self, "_on_button_solver_entered",[l[0],l[1],l[2]])
+			button1.connect("mouse_exited", self, "_on_button_solver_exited",[l[0],l[1],l[2]])
+			button1.set("first",1)
 			get_node("solver_button_container").add_child(button1)
 	print(winners)
 	get_node("helper/solutions_label").set_text(winners_label_text)
@@ -419,6 +422,59 @@ func clear_solver_button_container():
 	for i in get_node("solver_button_container").get_children():
 		i.queue_free()
 	winners = []
+	
 func _on_button_solver_pressed():
 	print("hla")
 	print([0])
+	
+func _on_button_solver_entered(pos1,pos2,pos3):
+	print(pos1,pos2,pos3)
+	if pos1 == 0 or pos2 == 0 or pos3 == 0:
+		get_node("topleft/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 1 or pos2 == 1 or pos3 == 1:
+		get_node("topmiddle1/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 2 or pos2 == 2 or pos3 == 2:
+		get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 3 or pos2 == 3 or pos3 == 3:
+		get_node("topright/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 4 or pos2 == 4 or pos3 == 4:
+		get_node("centerleft/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 5 or pos2 == 5 or pos3 == 5:
+		get_node("centermiddle1/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 6 or pos2 == 6 or pos3 == 6:
+		get_node("centermiddle2/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 7 or pos2 == 7 or pos3 == 7:
+		get_node("centerright/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 8 or pos2 == 8 or pos3 == 8:
+		get_node("bottomleft/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 9 or pos2 == 9 or pos3 == 9:
+		get_node("bottommiddle1/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 10 or pos2 == 10 or pos3 == 10:
+		get_node("bottommiddle2/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	if pos1 == 11 or pos2 == 11 or pos3 == 11:
+		get_node("bottomright/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	
+	
+func _on_button_solver_exited(pos1,pos2,pos3):
+	print(pos1,pos2,pos3)
+	get_node("topleft/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("topmiddle1/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("topright/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("centerleft/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("centermiddle1/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("centermiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("centerright/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("bottomleft/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("bottommiddle1/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("bottommiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	get_node("bottomright/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	
+	
+func highlight_solution_fichas_in():
+	get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
+	print("entro color")
+	
+func highlight_solution_fichas_out():
+	get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
+	print("salgo color")

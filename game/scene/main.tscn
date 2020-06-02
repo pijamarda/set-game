@@ -288,10 +288,10 @@ __meta__ = {
 }
 
 [node name="solutions_label" type="RichTextLabel" parent="helper"]
-margin_left = 299.946
-margin_top = 811.149
-margin_right = 519.946
-margin_bottom = 894.149
+margin_left = 618.894
+margin_top = 751.85
+margin_right = 838.894
+margin_bottom = 834.85
 custom_fonts/mono_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 __meta__ = {
@@ -325,9 +325,9 @@ stream = ExtResource( 5 )
 stream = ExtResource( 2 )
 
 [node name="solver_button_container" type="VBoxContainer" parent="."]
-margin_left = 15.0
+margin_left = 167.789
 margin_top = 820.475
-margin_right = 220.0
+margin_right = 372.789
 margin_bottom = 927.475
 custom_constants/separation = 10
 __meta__ = {

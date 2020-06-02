@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://img/smoke.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.160784, 0.0156863, 0.4, 1, 0.513726, 0.529412, 0.678431, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.148352, 0.1 ), 0.0, 3.61549, 0, 0, Vector2( 0.989011, 0.218182 ), -2.99886, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -4, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 160.0
+angle_random = 1.0
+scale = 0.55
+scale_random = 0.03
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[node name="Particles2D" type="Particles2D"]
+amount = 6
+lifetime = 5.0
+preprocess = 0.25
+speed_scale = 3.8
+explosiveness = 1.0
+process_material = SubResource( 5 )
+texture = ExtResource( 1 )

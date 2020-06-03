@@ -15,12 +15,11 @@ func _init():
 	randomize()
 	init_fichas()
 	
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	get_node("helper/cardlist_label").hide()
 	get_node("helper/Label2").hide()
-	get_node("helper/tablero_label").hide()
+	#get_node("helper/tablero_label").hide()
 # warning-ignore:unused_variable
 	for i in range(0,12):
 		tablero.append(fichas.pop_front())
@@ -30,22 +29,20 @@ func _ready():
 	sound_click = get_node("sound/click")
 	sound_correct = get_node("sound/correct")
 	sound_wrong = get_node("sound/wrong")
-	clear_solver_button_container()
-	
-	
-	
-	
-	
+	clear_solver_button_container()	
 	
 func clickok():
 	sound_click.play()
 
 func get_num_selected():
 	return num_selected
+	
 func add_num_selected():
 	num_selected = num_selected + 1
+	
 func sub_num_selected():
 	num_selected = num_selected - 1
+	
 func add_selections(n):
 	selections.append(n)
 	add_num_selected()
@@ -66,9 +63,14 @@ func add_selections(n):
 			temp_texture = load(tablero[selections[2]].print_file_name())
 			solved_sprite.set_texture(temp_texture)
 			
-			tablero[selections[0]] = fichas.pop_front()
-			tablero[selections[1]] = fichas.pop_front()
-			tablero[selections[2]] = fichas.pop_front()
+			# Lets check if there is enough fichas from the stack to pop out
+			if tablero.size() > 0 :
+				tablero[selections[0]] = fichas.pop_front()
+			if tablero.size() > 0 :
+				tablero[selections[1]] = fichas.pop_front()
+			if tablero.size() > 0 :
+				tablero[selections[2]] = fichas.pop_front()
+				
 			update_tablero_text()
 			update_label_text()
 			sound_click.stop()
@@ -87,18 +89,31 @@ func add_selections(n):
 		clear_buttons()
 
 func clear_buttons():
-	get_node("topleft").clear_button()
-	get_node("topmiddle1").clear_button()
-	get_node("topmiddle2").clear_button()
-	get_node("topright").clear_button()
-	get_node("centerleft").clear_button()
-	get_node("centermiddle1").clear_button()
-	get_node("centermiddle2").clear_button()
-	get_node("centerright").clear_button()
-	get_node("bottomleft").clear_button()
-	get_node("bottommiddle1").clear_button()
-	get_node("bottommiddle2").clear_button()
-	get_node("bottomright").clear_button()
+	#TODO: aqui tengo que arreglar el tema de que no me resetee el color de los botones
+	if tablero[0]:
+		get_node("topleft").clear_button()
+	if tablero[1]:
+		get_node("topmiddle1").clear_button()
+	if tablero[2]:
+		get_node("topmiddle2").clear_button()
+	if tablero[3]:
+		get_node("topright").clear_button()
+	if tablero[4]:
+		get_node("centerleft").clear_button()
+	if tablero[5]:
+		get_node("centermiddle1").clear_button()
+	if tablero[6]:
+		get_node("centermiddle2").clear_button()
+	if tablero[7]:
+		get_node("centerright").clear_button()
+	if tablero[8]:
+		get_node("bottomleft").clear_button()
+	if tablero[9]:
+		get_node("bottommiddle1").clear_button()
+	if tablero[10]:
+		get_node("bottommiddle2").clear_button()
+	if tablero[11]:
+		get_node("bottomright").clear_button()
 
 func solver():
 	
@@ -151,6 +166,9 @@ func solver_params(t1, t2, t3):
 	ficha1 = t1
 	ficha2 = t2
 	ficha3 = t3
+	
+	if not ficha1 or not ficha2 or not ficha3:
+		return false
 	
 	if ficha1.get_n() == ficha2.get_n() and ficha1.get_n() != ficha3.get_n():
 		result = false
@@ -231,7 +249,7 @@ func update_label_text():
 	var iterator = 0
 	for i in fichas:
 		tmp_text = tmp_text + i.print_name_simple() + "\n"
-		iterator = iterator + 1
+		iterator = iterator + 1		
 	get_node("helper/cardlist_label").set_text(tmp_text)
 	
 func update_tablero_text():
@@ -240,35 +258,85 @@ func update_tablero_text():
 	for i in tablero:
 		if iterator == 4 or iterator == 8:
 			tmp_text = tmp_text + "\n\n"
-		tmp_text = tmp_text + i.print_name_simple() + "  "
-		
-		iterator = iterator + 1
-	get_node("helper/tablero_label").set_text(tmp_text)
+		if i:
+			tmp_text = tmp_text + i.print_name_simple() + "  "
+			
+		iterator = iterator + 1	
+	var new_img
 	
-	var new_img = load(tablero[0].print_file_name())
-	get_node("topleft/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[1].print_file_name())
-	get_node("topmiddle1/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[2].print_file_name())
-	get_node("topmiddle2/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[3].print_file_name())
-	get_node("topright/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[4].print_file_name())
-	get_node("centerleft/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[5].print_file_name())
-	get_node("centermiddle1/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[6].print_file_name())
-	get_node("centermiddle2/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[7].print_file_name())
-	get_node("centerright/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[8].print_file_name())
-	get_node("bottomleft/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[9].print_file_name())
-	get_node("bottommiddle1/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[10].print_file_name())
-	get_node("bottommiddle2/CollisionShape2D/sprite").set_texture(new_img)
-	new_img = load(tablero[11].print_file_name())
-	get_node("bottomright/CollisionShape2D/sprite").set_texture(new_img)
+	var color_apagado = Color(0,0,0,0.5)
+	if tablero[0]:
+		new_img = load(tablero[0].print_file_name())
+		get_node("topleft/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("topleft/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("topleft/CollisionShape2D").disabled = true
+	if tablero[1]:
+		new_img = load(tablero[1].print_file_name())
+		get_node("topmiddle1/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("topmiddle1/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("topmiddle1/CollisionShape2D").disabled = true
+	if tablero[2]:
+		new_img = load(tablero[2].print_file_name())
+		get_node("topmiddle2/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("topmiddle2/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("topmiddle2/CollisionShape2D").disabled = true
+	if tablero[3]:
+		new_img = load(tablero[3].print_file_name())
+		get_node("topright/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("topright/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("topright/CollisionShape2D").disabled = true
+	if tablero[4]:
+		new_img = load(tablero[4].print_file_name())
+		get_node("centerleft/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("centerleft/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("centerleft/CollisionShape2D").disabled = true
+	if tablero[5]:
+		new_img = load(tablero[5].print_file_name())
+		get_node("centermiddle1/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("centermiddle1/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("centermiddle1/CollisionShape2D").disabled = true
+	if tablero[6]:
+		new_img = load(tablero[6].print_file_name())
+		get_node("centermiddle2/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("centermiddle2/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("centermiddle2/CollisionShape2D").disabled = true
+	if tablero[7]:
+		new_img = load(tablero[7].print_file_name())
+		get_node("centerright/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("centerright/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("centerright/CollisionShape2D").disabled = true
+	if tablero[8]:
+		new_img = load(tablero[8].print_file_name())
+		get_node("bottomleft/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("bottomleft/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("bottomleft/CollisionShape2D").disabled = true
+	if tablero[9]:
+		new_img = load(tablero[9].print_file_name())
+		get_node("bottommiddle1/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("bottommiddle1/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("bottommiddle1/CollisionShape2D").disabled = true
+	if tablero[10]:
+		new_img = load(tablero[10].print_file_name())
+		get_node("bottommiddle2/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("bottommiddle2/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("bottommiddle2/CollisionShape2D").disabled = true
+	if tablero[11]:
+		new_img = load(tablero[11].print_file_name())
+		get_node("bottomright/CollisionShape2D/sprite").set_texture(new_img)
+	else:
+		get_node("bottomright/CollisionShape2D/sprite").modulate = color_apagado
+		get_node("bottomright/CollisionShape2D").disabled = true
 	
 func restart():
 	clear_solver_button_container()
@@ -283,10 +351,13 @@ func restart():
 	update_label_text()
 	get_node("helper/solutions_label").set_text("")
 	solver_params(tablero[0],tablero[1],tablero[2])
+	print(fichas.size())
+	get_node("helper/tablero_label").set_text(str(fichas.size()))
 	
 func _on_Button_pressed():
-	restart()
-	var resultado = solver_params(tablero[0],tablero[1],tablero[2])
+	#restart()
+	reset_tablero()
+	var resultado = ""#= solver_params(tablero[0],tablero[1],tablero[2])
 	if resultado:
 		print("hay algo")
 	else:
@@ -425,9 +496,6 @@ func clear_solver_button_container():
 		i.queue_free()
 	winners = []
 	
-func _on_button_solver_pressed():
-	print("hla")
-	print([0])
 	
 func _on_button_solver_entered(pos1,pos2,pos3):
 	print(pos1,pos2,pos3)
@@ -472,11 +540,20 @@ func _on_button_solver_exited(pos1,pos2,pos3):
 	get_node("bottommiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
 	get_node("bottomright/CollisionShape2D/sprite").modulate = Color(1,1,1)
 	
+
 	
-func highlight_solution_fichas_in():
-	get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(0.25,0.25,0.25)
-	print("entro color")
-	
-func highlight_solution_fichas_out():
-	get_node("topmiddle2/CollisionShape2D/sprite").modulate = Color(1,1,1)
-	print("salgo color")
+func reset_tablero():
+	clear_solver_button_container()
+	#fichas.clear()
+	#init_fichas()
+	update_label_text()
+	tablero.clear()
+# warning-ignore:unused_variable
+	for i in range(0,12):
+		tablero.append(fichas.pop_front())
+	update_tablero_text()
+	update_label_text()
+	get_node("helper/solutions_label").set_text("")
+	#solver_params(tablero[0],tablero[1],tablero[2])
+	print(fichas.size())
+	get_node("helper/tablero_label").set_text(str(fichas.size()))

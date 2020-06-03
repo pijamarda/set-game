@@ -256,10 +256,10 @@ __meta__ = {
 }
 
 [node name="tablero_label" type="Label" parent="helper"]
-margin_left = 785.71
-margin_top = 523.297
-margin_right = 1016.71
-margin_bottom = 622.297
+margin_left = 10.0
+margin_top = 553.0
+margin_right = 150.0
+margin_bottom = 584.0
 text = "STATUS to be updated
 "
 __meta__ = {
